@@ -124,11 +124,9 @@ def can_make_change_no_repeat(coins, v):
 
 def least_coins(coins, value):
     added_coins = []
-
     i = len(coins) - 1
 
     while i >= 0:
-
         while coins[i] <= value:
             value -= coins[i]
             added_coins.append(coins[i])
@@ -143,12 +141,12 @@ class Test(unittest.TestCase):
     coins1 = [5, 10, 25, 50]
     coins2 = [1, 5, 10, 25, 50]
 
-    def test_coin_change_no_repeat(self):
+    def test_coin_change(self):
         self.assertEqual(coin_change(self.coins, 4), 4)
         self.assertEqual(coin_change(self.coins1, 15), 2)
         self.assertEqual(coin_change(self.coins2, 30), 18)
 
-    def test_coin_change(self):
+    def test_coin_change_no_repeat(self):
         self.assertEqual(coin_change_no_repeat(self.coins, 4), 3)
         self.assertEqual(coin_change_no_repeat(self.coins1, 15), 3)
         self.assertEqual(coin_change_no_repeat(self.coins2, 30), 3)
